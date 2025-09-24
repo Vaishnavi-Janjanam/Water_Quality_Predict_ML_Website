@@ -1,22 +1,14 @@
-# Welcome to your Lovable project
+# AquaPredict AI - Water Quality Forecasting
 
-## Project info
+## About This Project
 
-**URL**: https://lovable.dev/projects/4a4fa938-f113-4024-a513-17bbd547791d
+AquaPredict AI is an advanced water quality prediction system powered by XGBoost machine learning. It provides reliable Water Quality Index (WQI) and Classification (WQC) analysis for effective water management.
 
-## How can I edit this code?
+## How to run this project locally
 
-There are several ways of editing your application.
+**Development Setup**
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4a4fa938-f113-4024-a513-17bbd547791d) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone this repository and set up the development environment locally.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -60,14 +52,22 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Features
 
-Simply open [Lovable](https://lovable.dev/projects/4a4fa938-f113-4024-a513-17bbd547791d) and click on Share -> Publish.
+- 🤖 XGBoost machine learning model for accurate predictions
+- ⚡ Real-time water quality analysis
+- 🎯 93% prediction accuracy
+- 📊 Interactive data visualization
+- 🌊 Beautiful water-themed UI with 3D animations
+- 📱 Fully responsive design
 
-## Can I connect a custom domain to my Lovable project?
+## Water Quality Parameters
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The system analyzes 7 key water quality parameters:
+- Temperature (°C)
+- Dissolved Oxygen (mg/L) 
+- pH Level
+- Conductivity (μmhos/cm)
+- Biochemical Oxygen Demand (mg/L)
+- Nitrate (mg/L)
+- Fecal Coliform (MPN/100ml)
