@@ -2,104 +2,205 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Water Quality Platform Design System - Light Theme with Water Aesthetics
+All colors are HSL. Ocean-inspired gradients and animations.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core water-themed palette */
+    --background: 195 100% 98%;
+    --foreground: 205 87% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 205 87% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 205 87% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Ocean Blue */
+    --primary: 205 87% 28%;
+    --primary-foreground: 195 100% 98%;
+    
+    /* Primary variations for gradients */
+    --primary-light: 195 80% 45%;
+    --primary-dark: 205 95% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Aqua Teal */
+    --secondary: 175 70% 88%;
+    --secondary-foreground: 205 87% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft water tones */
+    --muted: 195 50% 95%;
+    --muted-foreground: 205 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Bright water blue */
+    --accent: 195 85% 70%;
+    --accent-foreground: 205 87% 15%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status colors for water quality */
+    --excellent: 145 85% 47%;
+    --good: 98 84% 47%;
+    --poor: 45 93% 58%;
+    --very-poor: 25 95% 53%;
+    --unfit: 0 84% 60%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 195 60% 90%;
+    --input: 195 60% 95%;
+    --ring: 195 85% 70%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Water-themed gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-water: linear-gradient(180deg, hsl(var(--accent) / 0.1), hsl(var(--secondary) / 0.3));
+    --gradient-wave: linear-gradient(90deg, hsl(var(--primary-light) / 0.2), hsl(var(--accent) / 0.4));
+    
+    /* Shadows with water effects */
+    --shadow-water: 0 8px 32px hsl(var(--primary) / 0.15);
+    --shadow-float: 0 4px 20px hsl(var(--accent) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--primary-light) / 0.3);
+    
+    /* Animation timings */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
+    /* Sidebar variables for compatibility */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary) / 0.3));
+  }
+}
+
+@layer components {
+  /* Water drop animation */
+  .water-drop {
+    @apply absolute rounded-full opacity-60;
+    background: var(--gradient-ocean);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .water-drop:nth-child(2n) {
+    animation-delay: -2s;
+    animation-duration: 8s;
+  }
+  
+  .water-drop:nth-child(3n) {
+    animation-delay: -4s;
+    animation-duration: 7s;
+  }
+  
+  /* Floating water molecules */
+  .molecule {
+    @apply absolute rounded-full;
+    background: radial-gradient(circle, hsl(var(--accent) / 0.4), transparent);
+    animation: molecule-float 10s linear infinite;
+  }
+  
+  /* Wave effects */
+  .wave-bg {
+    background: var(--gradient-wave);
+    animation: wave 8s ease-in-out infinite;
+  }
+  
+  /* Interactive hover effects */
+  .water-card {
+    @apply transition-all duration-300;
+    box-shadow: var(--shadow-water);
+  }
+  
+  .water-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Parameter input styling */
+  .param-input {
+    @apply transition-all duration-300 border-2;
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary) / 0.1));
+  }
+  
+  .param-input:focus {
+    @apply border-accent;
+    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.2);
+  }
+  
+  /* Quality indicator colors */
+  .quality-excellent { @apply bg-green-500 text-white; }
+  .quality-good { @apply bg-green-400 text-white; }
+  .quality-poor { @apply bg-yellow-500 text-white; }
+  .quality-very-poor { @apply bg-orange-500 text-white; }
+  .quality-unfit { @apply bg-red-500 text-white; }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translateY(-20px) rotate(180deg);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes molecule-float {
+    0% {
+      transform: translateX(-100px) translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateX(100px) translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes wave {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+  }
+  
+  @keyframes pulse-water {
+    0%, 100% { 
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+    }
+  }
+  
+  /* Utility classes */
+  .animate-water-pulse {
+    animation: pulse-water 2s infinite;
+  }
+  
+  .text-gradient {
+    background: var(--gradient-ocean);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,6 +59,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        /* Water quality status colors */
+        excellent: "hsl(var(--excellent))",
+        good: "hsl(var(--good))",
+        poor: "hsl(var(--poor))",
+        "very-poor": "hsl(var(--very-poor))",
+        unfit: "hsl(var(--unfit))",
+        /* Custom gradients */
+        "gradient-ocean": "var(--gradient-ocean)",
+        "gradient-water": "var(--gradient-water)",
+        "gradient-wave": "var(--gradient-wave)",
       },
       borderRadius: {
         lg: "var(--radius)",
