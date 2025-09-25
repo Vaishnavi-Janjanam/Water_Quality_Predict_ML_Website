@@ -54,12 +54,12 @@ This project is built with:
 
 ## Features
 
-- 🤖 XGBoost machine learning model for accurate predictions
-- ⚡ Real-time water quality analysis
-- 🎯 93% prediction accuracy
-- 📊 Interactive data visualization
-- 🌊 Beautiful water-themed UI with 3D animations
-- 📱 Fully responsive design
+-  XGBoost machine learning model for accurate predictions
+-  Real-time water quality analysis
+-  93% prediction accuracy
+-  Interactive data visualization
+-  Beautiful water-themed UI with 3D animations
+-  Fully responsive design
 
 ## Water Quality Parameters
 
